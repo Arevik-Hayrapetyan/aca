@@ -7,6 +7,6 @@ Array.prototype.myFind = function (callback) {
   }
   return undefined;
 };
-let array = [4, 5, 6, 7];
-let answer = array.myFind((el) => el > 4);
+const array = [4, 5, 6, 7];
+const answer = array.myFind((el) => el > 4);
 console.log(answer);
