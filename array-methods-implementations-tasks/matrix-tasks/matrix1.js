@@ -4,14 +4,17 @@ const matrix = [
   [4, 5, 6],
   [7, 8, 9],
   [10, 11, 12],
+  [11, 12, 13],
+  [14, 15, 16],
 ];
-
+//length-length[0].length
 const rotate90Degree = (matrix) => {
   const result = [];
   const length = matrix.length;
+  const count = matrix.length - matrix[0].length;
   if (matrix.length !== matrix[0].length && matrix.length > matrix[0].length) {
     matrix.forEach((row, rowIndex) => {
-      row.push(null);
+      for (let i = 0; i < count; i++) row.push(null);
     });
   }
   matrix.forEach((row, rowIndex) => {
@@ -21,7 +24,8 @@ const rotate90Degree = (matrix) => {
     });
     result.push(temp);
   });
-  result.splice(result.length - 1, 1);
+  result.splice(result.length - count);
+  console.log("result", result);
   return result;
 };
 
