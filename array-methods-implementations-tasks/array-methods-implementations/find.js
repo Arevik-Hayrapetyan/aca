@@ -1,5 +1,4 @@
 Array.prototype.myFind = function (callback) {
-  debugger;
   for (let index = 0; index < this.length; index++) {
     if (callback(this[index], index, this)) {
       return this[index];
