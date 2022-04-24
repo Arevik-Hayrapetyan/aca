@@ -1,10 +1,10 @@
 //1.Rotate any matrix
 const matrix = [
-  [1, 2, 3],
-  [4, 5, []],
-  [7, 8, 9],
-  [null, 11, 12],
-  [13, 14, NaN],
+  [1, 2],
+  [4, 5],
+  [7, 8],
+  [null, 11],
+  [13, 14],
 ];
 
 const rotate90Degree = (matrix) => {
