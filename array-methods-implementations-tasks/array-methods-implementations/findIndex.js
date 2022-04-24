@@ -1,6 +1,6 @@
-Array.prototype.myFindIndex = function (callback) {
+Array.prototype.myFindIndex = function (callback, thisArg) {
   for (let index = 0; index < this.length; index++) {
-    if (callback(this[index], index, this)) {
+    if (callback.call(thisArg, this[index], index, this)) {
       return index;
     }
   }
