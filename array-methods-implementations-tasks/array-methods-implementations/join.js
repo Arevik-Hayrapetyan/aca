@@ -1,5 +1,4 @@
 Array.prototype.myJoin = function (separator) {
-  // if (separator == "") separator = "";
   if (separator == undefined) separator = ",";
   let concat = "";
   for (let index = 0; index < this.length; index++) {
