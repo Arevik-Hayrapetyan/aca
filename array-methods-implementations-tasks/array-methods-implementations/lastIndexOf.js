@@ -1,5 +1,4 @@
 Array.prototype.myLastIndexOf = function (searchElement, fromIndex = 0) {
-  // debugger;
   for (let index = this.length - 1; index >= fromIndex; index--) {
     if (this[index] === searchElement) {
       return index;
