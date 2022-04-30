@@ -47,7 +47,7 @@ function checkValidPuzzle(grid) {
     grid.forEach((row, rowIndex) => {
       const temp = [];
       row.forEach((column, columnIndex) => {
-        temp.push(grid[grid.length - columnIndex - 1][rowIndex]);
+        temp.push(grid[columnIndex][rowIndex]);
       });
       result.push(temp);
     });
@@ -55,10 +55,16 @@ function checkValidPuzzle(grid) {
     return checkRow(result);
   }
   console.log("checkColumn", checkColumn(grid));
+
+  if (checkRow(grid) && checkColumn(grid)) {
+    return "Your puzzle is valid";
+  } else {
+    return "Your puzzle is invalid";
+  }
 }
 console.log(
   checkValidPuzzle([
-    [".", ".", ".", "1", "4", ".", ".", "2", "2"],
+    [".", ".", ".", "1", "4", ".", ".", "2", "."],
     [".", ".", "6", ".", ".", ".", ".", ".", "."],
     [".", ".", ".", ".", ".", ".", ".", ".", "."],
     [".", ".", "1", ".", ".", ".", ".", ".", "."],
