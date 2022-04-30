@@ -1,6 +1,6 @@
 function checkRoadSystem(roadRegister) {
-  let i = 0; //for rowIndex
-  let j = 0; // for columnIndex
+  let i = 0;
+  let j = 0;
   roadRegister.map((row, rowIndex) => {
     row.map((column, columnIndex) => {
       if (roadRegister[rowIndex][columnIndex]) {

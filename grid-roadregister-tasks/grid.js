@@ -23,10 +23,9 @@ function checkValidPuzzle(grid) {
     if (checkValidGridLength(grid)) {
       const check = grid.map((row) => {
         return row
-          .map((item, index) => {
-            if (!isNaN(item)) {
-              if (row.lastIndexOf(item) > index) {
-                console.log(row[index]);
+          .map((column, columnIndex) => {
+            if (!isNaN(column)) {
+              if (row.lastIndexOf(column) > columnIndex) {
                 return false;
               }
             }
@@ -72,6 +71,6 @@ console.log(
     [".", ".", ".", ".", ".", "8", ".", "1", "."],
     [".", "3", ".", ".", ".", ".", ".", ".", "6"],
     [".", ".", ".", ".", ".", "7", ".", ".", "."],
-    [".", ".", ".", "5", ".", ".", ".", "7", "."],
+    [".", ".", ".", "5", ".", ".", ".", "7", "6"],
   ])
 );
