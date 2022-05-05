@@ -15,7 +15,7 @@ function checkRoadSystem(roadRegister) {
 console.log(
   checkRoadSystem([
     [false, true, false],
-    [false, false, false],
-    [true, false, false],
+    [false, true, true],
+    [true, false, true],
   ])
 );

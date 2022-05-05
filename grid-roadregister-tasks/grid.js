@@ -1,3 +1,4 @@
+//BEM
 function checkValidPuzzle(grid) {
   const gridLength = 9;
   const rowLength = 9;
