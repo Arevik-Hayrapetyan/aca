@@ -58,7 +58,7 @@ function getPlayers(playersCount, finishedMatches) {
   return compareMatrixs(matrix, finishedMatches);
 }
 console.log(
-  getPlayers(4, [
+  getPlayers(5, [
     [0, 1],
     [1, 2],
     [2, 0],
