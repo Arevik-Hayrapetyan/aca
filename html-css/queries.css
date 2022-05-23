@@ -105,6 +105,14 @@
     background-color: #18a7ff;
   }
 }
+@media (min-width: 700px) {
+  .line-1 {
+    margin: 0 !important;
+  }
+  .product-types {
+    margin-left: 52px;
+  }
+}
 @media (max-width: 1065px) {
   /* .body-container {
     width: 1065px;
@@ -347,7 +355,7 @@
   .line-1 {
     width: 6px;
     height: 115px;
-    margin-left: 52px;
+    margin-left: 47px;
   }
   .line-2 {
     width: 29px;

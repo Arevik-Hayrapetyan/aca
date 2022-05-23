@@ -2,18 +2,18 @@ const getData = async () => {
   const res = await fetch("data.json");
   const data = await res.json();
   document.querySelector(".header_licenses").innerText = data.page_title;
-  drawHeaderLeft(data.plans);
-  drawNavbar(data.tabs);
+  renderHeaderLeft(data.plans);
+  renderNavbar(data.tabs);
 };
 
-function drawHeaderLeft(data) {
+function renderHeaderLeft(data) {
   const licenses = document.querySelectorAll(".box");
   data.forEach((item, index) => {
     licenses[index].querySelector("p").innerText = item.name;
     if (!item.active) licenses[index].classList.add("opacity");
   });
 }
-function drawNavbar(data) {
+function renderNavbar(data) {
   const navLists = document.querySelectorAll(".list-item");
   console.log(navLists);
   data.forEach((item, index) => {
