@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .register {
+      width: 400px;
+    }
+
+    input {
+      padding: 18px;
+      box-shadow: 3px 3px 5px grey;
+      font-size: 18px;
+      font-weight: 600;
+      width: 300px;
+      border-style: none;
+    }
+    label {
+      color: #b4886b;
+      font-weight: bold;
+      display: block;
+    }
+    label:after {
+      content: ": ";
+    }
+    label {
+      color: #b4886b;
+      font-weight: bold;
+      width: 130px;
+      float: left;
+    }
+    label:after {
+      content: ": ";
+    }
+    .button {
+      padding: 10px;
+      border: 1px solid gray;
+      background-color: #73b46b;
+      border-radius: 5px;
+      font: inherit;
+      border-style: none;
+      cursor: pointer;
+    }
+    .button:focus {
+      outline: 2px solid gray;
+      font-weight: bold;
+      color: white;
+    }
+    .button:hover {
+      background-color: orange;
+      box-shadow: 3px 3px 5px grey;
+    }
+    .section-data {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-items: center;
+      align-items: center;
+      margin-left: 70px;
+      row-gap: 10px;
+      column-gap: 10px;
+    }
+    .editBtn {
+      padding: 10px;
+      background-color: #6bb4b4;
+      border-radius: 5px;
+      font: inherit;
+      border-style: none;
+      cursor: pointer;
+    }
+    .deleteBtn {
+      padding: 10px;
+      background-color: #cc5252;
+      border-radius: 5px;
+      font: inherit;
+      border-style: none;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <form class="register">
+      <h2>Event form</h2>
+      <section>
+        <p>
+          <label for="'meeting-title">Title</label>
+          <input type="text" name="name" id="meeting-title" />
+        </p>
+        <p>
+          <label for="meeting-time">Choose a time </label>
+          <input
+            type="datetime-local"
+            id="meeting-time"
+            name="meeting-time"
+            value="2022-06-05T19:30"
+            min="2022-27-05T00:00"
+          />
+        </p>
+
+        <p>
+          <button name="button" class="button">Submit</button>
+        </p>
+      </section>
+    </form>
+    <section class="section-data"></section>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
