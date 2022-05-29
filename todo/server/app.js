@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 app.post("/", (req, res) => {
   const file = readFile("./data.json");
   const parsed = JSON.parse(file);
-  parsed.push({ id: randomId.nanoid(), ...req.body });
+  parsed.push({ id: randomId.nanoid(),notified:false, ...req.body });
   fs.writeFileSync("./data.json", JSON.stringify(parsed));
   res.send("Successfully added event");
 });
@@ -34,6 +34,8 @@ app.put("/:id", (req, res) => {
     if (updatedData.date) {
       parsedJson[findIndex].date = updatedData.date;
     }
+    parsedJson[findIndex].completed = updatedData.completed;
+    console.log(parsedJson, "ddddddddddddddddddddddddddddd")
     fs.writeFileSync("./data.json", JSON.stringify(parsedJson));
     res.json({ success: true });
   } else {
