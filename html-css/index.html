@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="queries.css" />
+    <title>Figma</title>
+  </head>
+  <body>
+    <div class="body-container">
+      <header class="header">
+        <h4 class="header_licenses"></h4>
+        <div class="header_left">
+          <div class="box item-1">
+            <p></p>
+          </div>
+          <div class="box item-2 opacity">
+            <p></p>
+          </div>
+          <div class="box item-3 opacity">
+            <p></p>
+          </div>
+          <div class="header_left_button"><h4>Upgrade Now</h4></div>
+        </div>
+      </header>
+
+      <nav class="main-nav">
+        <ul class="main-nav-list">
+          <li class="main-nav-list_item list-item"></li>
+          <li class="main-nav-list_item list-item"></li>
+          <li class="main-nav-list_selected list-item"></li>
+        </ul>
+      </nav>
+      <main>
+        <section class="system-section">
+          <h3 class="systems-heading">Systems</h3>
+          <div>
+            <div class="accordion-headings">
+              <p class="system-name">System Name</p>
+              <p class="system-id">ID</p>
+              <p class="system-date">Created Date</p>
+              <p class="system-licences">Active Licenses</p>
+            </div>
+            <div class="product-container">
+              <div class="arrow_down"></div>
+              <p class="product_content name">James-Main-Mackbook</p>
+              <p class="product_content id">91520</p>
+              <p class="product_content date">01 Jan 2019</p>
+              <p class="product_content active-date">2</p>
+              <button class="product_content btn-border button_add">
+                <p class="btn-content">Add License</p>
+              </button>
+              <button class="product_content btn-border button_remove">
+                <p class="btn-content">Remove</p>
+              </button>
+            </div>
+            <div class="product-types">
+              <div class="rectangle-line line-1"></div>
+              <div>
+                <div class="rectangle-line line-2 line-2_1"></div>
+                <div class="rectangle-line line-2 line-2_2"></div>
+              </div>
+              <div class="product_infos">
+                <div class="products_headings">
+                  <p class="products_heading licenses">Licenses</p>
+                  <p class="products_heading">Expires</p>
+                </div>
+                <div class="product_info">
+                  <p class="product_desc licenses">Jenkins Pro</p>
+                  <p class="product_desc expires-date">Never</p>
+                  <p class="product_desc download">Download</p>
+                </div>
+                <div class="product_info item_2">
+                  <p class="product_desc licenses">Outfit Pro</p>
+                  <p class="product_desc expires-date">29 Jul 2021</p>
+                  <p class="product_desc download">Download</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-container">
+              <div class="accordion-container_secondary">
+                <p class="system-date secondary">Created Date</p>
+                <p class="system-licences secondary">Active Licenses</p>
+              </div>
+              <div class="product-container">
+                <div class="arrow_down rotate"></div>
+                <p class="product_content name secondary">James-Laptop</p>
+                <p class="product_content id">84729</p>
+                <p class="product_content date">15 Jan 2020</p>
+                <p class="product_content active-date">1</p>
+                <button class="product_content btn-border button_add">
+                  <p class="btn-content">Add License</p>
+                </button>
+                <button class="product_content btn-border button_remove">
+                  <p class="btn-content">Remove</p>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="upload-section">
+          <h4>Add System</h4>
+          <div class="upload-box">
+            <div class="upload-arrow"><p>&darr;</p></div>
+            <div class="choose-file">
+              <span>Choose a file</span> to upload or drug it here
+              <br />
+              (jpg,png, max size 5mb)
+            </div>
+          </div>
+          <div class="example"></div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
