@@ -40,11 +40,7 @@ const renderData = async () => {
       const meetingTime = foundDateTime.querySelector(".time").value;
       const meetingTitle = foundDateTime.querySelector(".title").value;
       const completed = foundDateTime.querySelector("#completed").checked;
-      console.log("comleteddddddddddddddd", completed);
-      alert("Hellooooooo");
-      if (completed) {
-        foundDateTime.querySelector("#completed").setAttribute("checked", true);
-      }
+   
       editEvent(
         meetingTitle,
         meetingTime,
