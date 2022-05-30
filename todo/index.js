@@ -25,9 +25,9 @@ const renderData = async () => {
     <label for="completed">Complited</label>
     <input  type="checkbox" id="completed"/>
     </div>
-    <div>
-       <button id=${event.id} class="editBtn">Submit Changes</button>
-       <button id=${event.id} class="deleteBtn">Delete</button>
+    <div class="btns-container">
+       <button id=${event.id} class="editBtn ">Submit Changes</button>
+       <button id=${event.id} class="deleteBtn ">Delete</button>
     </div>
     </div>`;
     })
