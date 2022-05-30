@@ -11,6 +11,8 @@ const renderData = async () => {
   console.log(data);
   dataSection.innerHTML = data
     ?.map((event) => {
+      let checked = "";
+      if (event.completed) checked = "checked";
       return `  <div id=${event.id}>
       <input class="title" value=${event.title} />
       <input
@@ -23,7 +25,7 @@ const renderData = async () => {
     />
     <div class="notified-container">
     <label for="completed" class="completed">Complited</label>
-    <input  type="checkbox" id="completed"/>
+    <input  type="checkbox" id="completed" ${checked}/>
     </div>
     <div class="btns-container">
        <button id=${event.id} class="editBtn ">Submit Changes</button>
@@ -38,7 +40,11 @@ const renderData = async () => {
       const meetingTime = foundDateTime.querySelector(".time").value;
       const meetingTitle = foundDateTime.querySelector(".title").value;
       const completed = foundDateTime.querySelector("#completed").checked;
-
+      console.log("comleteddddddddddddddd", completed);
+      alert("Hellooooooo");
+      if (completed) {
+        foundDateTime.querySelector("#completed").setAttribute("checked", true);
+      }
       editEvent(
         meetingTitle,
         meetingTime,

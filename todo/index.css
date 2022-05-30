@@ -162,12 +162,12 @@ label:after {
   -webkit-user-select: none;
   touch-action: manipulation;
 }
-.completed{
-    font-size: 18px;
-    color: black;
+.completed {
+  font-size: 18px;
+  color: black;
 }
-.notified-container{
-    box-shadow: 3px 3px 5px grey;
-    padding: 18px;
-    width: 300px;
+.notified-container {
+  box-shadow: 3px 3px 5px grey;
+  padding: 18px;
+  width: 300px;
 }
