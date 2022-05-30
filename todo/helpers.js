@@ -4,7 +4,7 @@ export async function getData() {
     const response = await fetch(API_URL, {
       method: "GET",
       mode: "cors",
-      headers: {},
+      headers: { },
     });
     const res = await response.json();
     return res;
