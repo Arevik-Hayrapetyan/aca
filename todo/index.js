@@ -22,7 +22,7 @@ const renderData = async () => {
       min="2022-30-05T00:00"
     />
     <div class="notified-container">
-    <label for="completed">Complited</label>
+    <label for="completed" class="completed">Complited</label>
     <input  type="checkbox" id="completed"/>
     </div>
     <div class="btns-container">

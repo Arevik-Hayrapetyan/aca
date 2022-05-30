@@ -11,7 +11,7 @@ body {
 
 input {
   padding: 18px;
-  box-shadow: 3px 3px 5px grey;
+  box-shadow: 2px 1px 5px grey;
   font-size: 18px;
   font-weight: 600;
   width: 300px;
@@ -42,8 +42,8 @@ label:after {
   justify-items: center;
   align-items: center;
   margin-left: 70px;
-  row-gap: 10px;
-  column-gap: 10px;
+  row-gap: 38px;
+  column-gap: 32px;
 }
 .editBtn {
   padding: 10px;
@@ -63,12 +63,9 @@ label:after {
   font-size: 18px;
 }
 .notified-container {
-  margin-top: 10px;
   margin-bottom: 10px;
 }
-/* fffffffffffffffff */
 
-/* CSS */
 .deleteBtn {
   align-items: center;
   background-color: #ffe7e7;
@@ -164,4 +161,13 @@ label:after {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+}
+.completed{
+    font-size: 18px;
+    color: black;
+}
+.notified-container{
+    box-shadow: 3px 3px 5px grey;
+    padding: 18px;
+    width: 300px;
 }
