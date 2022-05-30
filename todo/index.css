@@ -17,6 +17,11 @@ input {
   width: 300px;
   border-style: none;
 }
+input:focus-visible{
+  border: 1px solid #db7c7c;
+    outline: none;
+    border-radius: 4px;
+}
 label {
   color: #b4886b;
   font-weight: bold;
