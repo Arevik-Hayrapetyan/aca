@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 app.post("/", (req, res) => {
   const file = readFile("./data.json");
   const parsed = JSON.parse(file);
-  parsed.push({ id: randomId.nanoid(),notified:false, ...req.body });
+  parsed.push({ id: randomId.nanoid(), notified: false, ...req.body });
   fs.writeFileSync("./data.json", JSON.stringify(parsed));
   res.send("Successfully added event");
 });
@@ -24,6 +24,7 @@ app.post("/", (req, res) => {
 app.put("/:id", (req, res) => {
   const parsedJson = JSON.parse(readFile("./data.json"));
   const updatedData = req.body;
+  console.log("req.body", req.body);
   const findIndex = parsedJson.findIndex((item) => {
     return item.id === req.params.id;
   });
@@ -35,7 +36,7 @@ app.put("/:id", (req, res) => {
       parsedJson[findIndex].date = updatedData.date;
     }
     parsedJson[findIndex].completed = updatedData.completed;
-    console.log(parsedJson, "ddddddddddddddddddddddddddddd")
+    parsedJson[findIndex].notified = updatedData.notified;
     fs.writeFileSync("./data.json", JSON.stringify(parsedJson));
     res.json({ success: true });
   } else {
@@ -60,6 +61,26 @@ app.delete("/:id", (req, res) => {
   }
 });
 
+const todoReminder = () => {
+  const file = readFile("./data.json");
+  const parsedTodos = JSON.parse(file);
+  let changed = false;
+  const filteredData = parsedTodos.map((item) => {
+    if (!item.notified) {
+      const difference = Math.floor(Date.now() - new Date(item.date).getTime());
+      if (difference > 0 && difference < 120000) {
+        console.log(`Your time is up to 2 minutes`);
+        item.notified = true;
+        changed = true;
+      }
+    }
+    return item;
+  });
+  if (changed) {
+    fs.writeFileSync("./data.json", JSON.stringify(filteredData));
+  }
+};
 app.listen(3000, () => {
   console.log("Start");
+  setInterval(todoReminder, 60000);
 });

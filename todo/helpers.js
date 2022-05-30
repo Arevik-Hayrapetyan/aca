@@ -13,7 +13,12 @@ export async function getData() {
   }
 }
 
-export async function createEvent(title, date, completed = false, notified = false) {
+export async function createEvent(
+  title,
+  date,
+  completed = false,
+  notified = false
+) {
   try {
     const response = await fetch(API_URL, {
       method: "POST",
@@ -24,7 +29,7 @@ export async function createEvent(title, date, completed = false, notified = fal
         title,
         date,
         completed,
-        notified
+        notified,
       }),
     });
     console.log(response);
@@ -33,14 +38,14 @@ export async function createEvent(title, date, completed = false, notified = fal
     console.log(e.message);
   }
 }
-export async function editEvent(title, date,  id,completed) {
+export async function editEvent(title, date, id, completed, notified) {
   try {
     const response = await fetch(`${API_URL}${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
       },
-      body: JSON.stringify({ title, date, completed }),
+      body: JSON.stringify({ title, date, id, completed, notified }),
     });
     return response;
   } catch (e) {

@@ -1,18 +1,16 @@
-import { API_URL } from "./constants.js";
 import { getData, createEvent, editEvent, deleteEvent } from "./helpers.js";
 
 const dataSection = document.querySelector(".section-data");
 const submitBtn = document.querySelector(".button");
 const meetingTitle = document.querySelector("#meeting-title");
 const meetingTime = document.querySelector("#meeting-time");
-const done = document.querySelector(".done")
+const done = document.querySelector(".done");
 
 const renderData = async () => {
   const data = await getData();
   console.log(data);
   dataSection.innerHTML = data
     ?.map((event) => {
-      console.log("event.completed", event.completed, )
       return `  <div id=${event.id}>
       <input class="title" value=${event.title} />
       <input
@@ -21,7 +19,7 @@ const renderData = async () => {
       id="meeting-time"
       name="meeting-time"
       value=${event.date}
-      min="2022-27-05T00:00"
+      min="2022-30-05T00:00"
     />
     <div class="notified-container">
     <label for="completed">Complited</label>
@@ -34,22 +32,20 @@ const renderData = async () => {
     </div>`;
     })
     .join("");
-  document.querySelectorAll(".editBtn").forEach((item) => {
+  document.querySelectorAll(".editBtn").forEach((item, index) => {
     item.addEventListener("click", () => {
       const foundDateTime = document.getElementById(item.id);
       const meetingTime = foundDateTime.querySelector(".time").value;
       const meetingTitle = foundDateTime.querySelector(".title").value;
-      console.dir(document.querySelector("#completed"))
       const completed = foundDateTime.querySelector("#completed").checked;
 
-      console.log(
+      editEvent(
         meetingTitle,
         meetingTime,
         item.id,
         completed,
-        "aaaaaaaaaaaaaaaaaaaaaa"
+        data[index].notified
       );
-      editEvent(meetingTitle, meetingTime, item.id, completed);
       alert("Successfully updated ");
     });
   });
@@ -66,26 +62,3 @@ submitBtn.addEventListener("click", (e) => {
 });
 
 renderData();
-
-
-  // const dateObj = new Date();
-  // const month = dateObj.getUTCMonth() + 1; //months from 1-12
-  // const day = dateObj.getUTCDate();
-  // const year = dateObj.getUTCFullYear();
-  // console.log(month, day, year);
-  const allDate = [];
-  const data = await getData();
- data.forEach(item => {
-   console.log(item.date.split('T')[0], new Date().toISOString().split('T')[0])
-  if(!item.notified && item.date.split('T')[0] === new Date().toISOString().split('T')[0]){
-    allDate.push(item)
-  }
- })
- console.log("allDate", allDate)
- function notifyForThisMinute() {
-
-  setTimeout(notifyForThisMinute, (61 - new Date().getSeconds()) * 1000);
-}
-notifyForThisMinute();
-
-
